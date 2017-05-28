@@ -12,7 +12,7 @@ public class Main {
 		String token;
 		while (!(token = sc.nextLine()).equals("S")) {
 			if (token.equals("C")) {
-				System.out.print(Utilidades.ENDL + Menu.getTextoCadastrarContatoPosicao());
+				System.out.print(Utilidades.FIM_DE_LINHA + Menu.getTextoCadastrarContatoPosicao());
 				int posicao = Integer.parseInt(sc.nextLine());
 
 				if (posicao > 0 && posicao <= agenda.getCapacidade()) {
@@ -29,12 +29,12 @@ public class Main {
 
 					agenda.cadastrarContato(contato, posicao);
 
-					System.out.println(Menu.getTextoCadastrarContatoCadastroRealizado() + Utilidades.ENDL);
+					System.out.println(Menu.getTextoCadastrarContatoCadastroRealizado() + Utilidades.FIM_DE_LINHA);
 				} else {
-					System.out.println(Menu.getTextoPosicaoInvalida() + Utilidades.ENDL);
+					System.out.println(Menu.getTextoPosicaoInvalida() + Utilidades.FIM_DE_LINHA);
 				}
 			} else if (token.equals("L")) {
-				System.out.println(Utilidades.ENDL + agenda.toString());
+				System.out.println(Utilidades.FIM_DE_LINHA + agenda.toString());
 			} else if (token.equals("E")) {
 				System.out.print(Menu.getTextoExibirContato());
 				int posicao = Integer.parseInt(sc.nextLine());
@@ -42,16 +42,18 @@ public class Main {
 				if (agenda.validarPosicao(posicao)) {
 					Contato contato = agenda.obterContato(posicao);
 
-					System.out.println(Utilidades.ENDL + contato.toString("%s %s - %s") + Utilidades.ENDL);
+					System.out.println(Utilidades.FIM_DE_LINHA + contato.toString("%s %s - %s") + Utilidades.FIM_DE_LINHA);
 				} else {
-					System.out.println(Menu.getTextoPosicaoInvalida() + Utilidades.ENDL);
+					System.out.println(Menu.getTextoPosicaoInvalida() + Utilidades.FIM_DE_LINHA);
 				}
 			} else {
-				System.out.println(Menu.getTextoOpcaoInvalida() + Utilidades.ENDL);
+				System.out.println(Menu.getTextoOpcaoInvalida() + Utilidades.FIM_DE_LINHA);
 			}
 
 			System.out.print(Menu.getTextoMenuDeOpcoes());
 		}
+		
+		sc.close();
 	}
 
 }

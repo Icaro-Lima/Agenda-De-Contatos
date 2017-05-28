@@ -89,7 +89,7 @@ public class Agenda {
 
 		for (int i = 0; i < this.getCapacidade(); i++) {
 			if (contatos[i] != null) {
-				listagem += (i + 1) + contatos[i].toString(" - %s %s") + Utilidades.ENDL;
+				listagem += (i + 1) + contatos[i].toString(" - %s %s") + Utilidades.FIM_DE_LINHA;
 			}
 		}
 
