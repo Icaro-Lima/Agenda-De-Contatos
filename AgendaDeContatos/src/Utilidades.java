@@ -1,6 +1,6 @@
 
 public class Utilidades {
 	
-	static final String endl = System.lineSeparator();
+	static final String ENDL = System.lineSeparator();
 	
 }

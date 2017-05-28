@@ -1,9 +1,9 @@
 public class Menu {
 
 	public static String getTextoMenuDeOpcoes() {
-		return "(C)adastrar Contato" + Utilidades.endl + "(L)istar Contatos"
-				+ Utilidades.endl + "(E)xibir Contato" + Utilidades.endl
-				+ "(S)air" + Utilidades.endl + "Opção> ";
+		return "(C)adastrar Contato" + Utilidades.ENDL + "(L)istar Contatos"
+				+ Utilidades.ENDL + "(E)xibir Contato" + Utilidades.ENDL
+				+ "(S)air" + Utilidades.ENDL + "Opção> ";
 	}
 	
 	public static String getTextoOpcaoInvalida() {

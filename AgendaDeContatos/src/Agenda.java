@@ -42,7 +42,7 @@ public class Agenda {
 
 		for (int i = 0; i < 100; i++) {
 			if (contatos[i] != null) {
-				listagem += contatos[i].toString("%s%s") + Utilidades.endl;
+				listagem += contatos[i].toString("%s%s") + Utilidades.ENDL;
 			}
 		}
 
