@@ -20,6 +20,30 @@ public class Contato {
 	 *            Telefone do contato.
 	 */
 	public Contato(String nome, String sobrenome, String telefone) {
+		if (nome == null) {
+			throw new NullPointerException("Nome nulo");
+		}
+		
+		if (sobrenome == null) {
+			throw new NullPointerException("Sobrenome nulo");
+		}
+		
+		if (telefone == null) {
+			throw new NullPointerException("Telefone nulo");
+		}
+		
+		if (nome.trim().equals("")) {
+			throw new IllegalArgumentException("Nome vazio");
+		}
+		
+		if (sobrenome.trim().equals("")) {
+			throw new IllegalArgumentException("Sobrenome vazio");
+		}
+		
+		if (telefone.trim().equals("")) {
+			throw new IllegalArgumentException("Telefone vazio");
+		}
+		
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.telefone = telefone;
