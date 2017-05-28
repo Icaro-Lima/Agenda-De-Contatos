@@ -19,7 +19,7 @@ public class Agenda {
 		this.capacidade = capacidade;
 		this.contatos = new Contato[capacidade];
 	}
-
+	
 	/**
 	 * Cadastra um contato em uma determinada posição na agenda.
 	 * 
@@ -29,7 +29,7 @@ public class Agenda {
 	 *            A posição em que o contato deve ser inserido (1 - capacidade).
 	 */
 	public void cadastrarContato(Contato contato, int posicao) {
-		contatos[posicao - 1] = contato;
+		contatos[posicao - 1] = new Contato(contato);
 	}
 
 	/**
