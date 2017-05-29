@@ -8,39 +8,57 @@ import org.junit.Test;
 public class ContatoTest {
 
 	Contato contato;
-	
-	@Before
-	public void initializeContato() {
-		contato = new Contato("Ícaro", "Dantas", "(83) 9.91134899");
-	}
-	
+
 	@Test
-	public void testContatoStringStringString() {		
-		assert(contato.getNome().equals("Ícaro"));
-		assert(contato.getSobrenome().equals("Dantas"));
-		assert(contato.getTelefone().equals("(83) 9.91134899"));
+	public void testContatoStringStringString() {
+		contato = new Contato("Ícaro", "Dantas", "(83) 9.91134899");
+		
+		assert (contato.getNome().equals("Ícaro"));
+		assert (contato.getSobrenome().equals("Dantas"));
+		assert (contato.getTelefone().equals("(83) 9.91134899"));
 	}
 
 	@Test
 	public void testContatoContato() {
-		Contato clone = new Contato(contato);
+		contato = new Contato("Ícaro", "Dantas", "(83) 9.91134899");
 		
-		assert(clone != contato);
-		assert(clone.getNome().equals(contato.getNome()));
-		assert(clone.getSobrenome().equals(contato.getSobrenome()));
-		assert(clone.getTelefone().equals(contato.getTelefone()));
+		Contato clone = new Contato(contato);
+
+		assert (clone != contato);
+		assert (clone.getNome().equals(contato.getNome()));
+		assert (clone.getSobrenome().equals(contato.getSobrenome()));
+		assert (clone.getTelefone().equals(contato.getTelefone()));
 	}
 
 	@Test
 	public void testToString() {
-		assert(contato.toString().equals("Ícaro Dantas (83) 9.91134899"));
+		contato = new Contato("Ícaro", "Dantas", "(83) 9.91134899");
+		
+		assert (contato.toString().equals("Ícaro Dantas (83) 9.91134899"));
 	}
 
 	@Test
 	public void testToStringString() {
-		assert(contato.toString("%s %s - %s").equals("Ícaro Dantas - (83) 9.91134899"));
-		assert(contato.toString("%s ... %s").equals("Ícaro ... Dantas"));
-		assert(contato.toString("???%s???").equals("???Ícaro???"));
+		contato = new Contato("Ícaro", "Dantas", "(83) 9.91134899");
+		
+		assert (contato.toString("%s %s - %s").equals("Ícaro Dantas - (83) 9.91134899"));
+		assert (contato.toString("%s ... %s").equals("Ícaro ... Dantas"));
+		assert (contato.toString("???%s???").equals("???Ícaro???"));
+	}
+
+	@Test(expected = NullPointerException.class)
+	public void testContatoStringStringStringNull() {
+		contato = new Contato(null, "Dantas", "(83) 9.91134899");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testContatoStringStringStringNullString() {
+		contato = new Contato("Ícaro", "", "(83) 9.91134899");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testContatoStringStringStringNullStringWithSpaces() {
+		contato = new Contato("Ícaro", "                       ", "(83) 9.91134899");
 	}
 
 }
