@@ -1,6 +1,6 @@
 package agenda;
 
-import agendaDeContatos.Utilidades;
+import main.Utilidades;
 
 /**
  * Representação de uma agenda de contatos. A agenda tem um array de contatos

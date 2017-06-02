@@ -1,4 +1,4 @@
-package agendaDeContatos;
+package main;
 
 public class Utilidades {
 
